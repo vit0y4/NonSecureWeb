@@ -1,0 +1,17 @@
+<%= form_tag({controller: :users, action: :search}, :method => :get) do %>
+  <div class="field">
+    <%= label_tag (:nickname) %><br>
+    <%= text_field_tag (:nickname) %>
+  </div>
+  <div class="actions">
+    <%= submit_tag ("Search") %>
+  </div>
+<% end %>
+<% if @user.nil? %>
+	<div>NO EXISTE</div>
+	<% else %>
+	<div>
+	  Name: <%=@user.nickname %>
+	</div>
+<% end %>
+  
